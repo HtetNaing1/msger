@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  msger:
+    image: msger-dev
+    build: .
+    container_name: msger_c
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./src:/msger/src
+      - ./public:/msger/public
+      - /msger/node_modules
