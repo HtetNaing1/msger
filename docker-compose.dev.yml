@@ -4,7 +4,8 @@ services:
     env_file:
       - .env.local
     image: msger-dev
-    build: .
+    build:
+      dockerfile: Dockerfile.dev
     container_name: msger_c
     ports:
       - '3000:3000'

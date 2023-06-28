@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  msger:
+    image: msger-prod
+    container_name: msger_c
+    build:
+      dockerfile: Dockerfile.prod
+      args:
+        NEXTAUTH_SECRET: supersecret
+        UPSTASH_REDIS_REST_URL: https://apn1-happy-pheasant-35757.upstash.io
+        UPSTASH_REDIS_REST_TOKEN: AYutASQgNTFkY2Y3MGItOGNjZC00NzZiLWExZmMtNDY1NGE3NTNhNzUxNGJlNmNlY2UzMzE5NDQ5MTkxZmM3OTRlOTYxYWRjNzc=
+        GOOGLE_CLIENT_ID: 288374859378-7cs2f7bue3hui3jjfj4vh5p0o31s871r.apps.googleusercontent.com
+        GOOGLE_CLIENT_SECRET: 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
+        PUSHER_APP_ID: "1621658"
+        NEXT_PUBLIC_PUSHER_APP_KEY: "d954eb89829fbf02c9ef"
+        PUSHER_APP_SECRET: "bde5128c5dc2f9e7871c"
+    restart: always
+    ports:
+      - "3000:3000"
